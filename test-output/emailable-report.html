@@ -8,11 +8,31 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">16,882</td><td></td><td></td></tr>
+<tr><th colspan="8">Suite</th></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">8</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">106,791</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">testCases.HomePageTest</td><td><a href="#m0">verifyCalculateWithDiscount</a></td><td rowspan="1">1744379651130</td><td rowspan="1">13145</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">testCases.PatientTest</td><td><a href="#m0">verifyPatientrecordCreationforTest</a></td><td rowspan="1">1744383426179</td><td rowspan="1">26919</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">testCases.HomePageTest</td><td><a href="#m1">costCalcSectionOnHomePage</a></td><td rowspan="1">1744383360383</td><td rowspan="1">4370</td></tr><tr class="passedeven"><td><a href="#m2">todoListSectionOnHomePage</a></td><td rowspan="1">1744383367861</td><td rowspan="1">4325</td></tr><tr class="passedeven"><td><a href="#m3">verifyCalculateWithDiscount</a></td><td rowspan="1">1744383375612</td><td rowspan="1">13171</td></tr><tr class="passedeven"><td><a href="#m4">verifyCalculatorWithoutDiscount</a></td><td rowspan="1">1744383391860</td><td rowspan="1">9794</td></tr><tr class="passedodd"><td rowspan="2">testCases.LoginTest</td><td><a href="#m5">loginWithInvalidCredentials</a></td><td rowspan="1">1744383350177</td><td rowspan="1">1515</td></tr><tr class="passedodd"><td><a href="#m6">logintoapplication</a></td><td rowspan="1">1744383353169</td><td rowspan="1">4136</td></tr><tr class="passedeven"><td rowspan="2">testCases.PatientTest</td><td><a href="#m7">verifyAddPatientContactDetail</a></td><td rowspan="1">1744383407787</td><td rowspan="1">2901</td></tr><tr class="passedeven"><td><a href="#m8">verifyAddSecondaryDetail</a></td><td rowspan="1">1744383416697</td><td rowspan="1">3565</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">testCases.HomePageTest#verifyCalculateWithDiscount</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">Subtotal calulated correctly<br/>The discount is applied correctly by the cost calculator.</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test</h2><h3 id="m0">testCases.PatientTest#verifyPatientrecordCreationforTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //label[text()=&apos;Doctor who recommended this test&apos;]/following::button[1] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.85, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\darek\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59027}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59027/devtoo..., se:cdpVersion: 135.0.7049.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4f6af69945fa0f9718a13aaf863c1c23
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at pages.Patient.testRecommendedBy(Patient.java:228)
+	at pages.Patient.addTestDetails(Patient.java:147)
+	at testCases.PatientTest.verifyPatientrecordCreationforTest(PatientTest.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">testCases.HomePageTest#costCalcSectionOnHomePage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">testCases.HomePageTest#todoListSectionOnHomePage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">testCases.HomePageTest#verifyCalculateWithDiscount</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">Subtotal calulated correctly<br/>The discount is applied correctly by the cost calculator.</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">testCases.HomePageTest#verifyCalculatorWithoutDiscount</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">Cost calculator functions properly without discount applied</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">testCases.LoginTest#loginWithInvalidCredentials</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">Login working as expected</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">testCases.LoginTest#logintoapplication</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">Login successful--https://gor-pathology.web.app/dashboard</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">testCases.PatientTest#verifyAddPatientContactDetail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">testCases.PatientTest#verifyAddSecondaryDetail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

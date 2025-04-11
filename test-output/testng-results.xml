@@ -1,23 +1,227 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="9" passed="8" failed="1" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[Login working as expected]]>
+    </line>
+    <line>
+      <![CDATA[Login successful--https://gor-pathology.web.app/dashboard]]>
+    </line>
     <line>
       <![CDATA[Subtotal calulated correctly]]>
     </line>
     <line>
       <![CDATA[The discount is applied correctly by the cost calculator.]]>
     </line>
+    <line>
+      <![CDATA[Cost calculator functions properly without discount applied]]>
+    </line>
   </reporter-output>
-  <suite started-at="2025-04-11T19:24:07 IST" name="Default suite" finished-at="2025-04-11T19:24:24 IST" duration-ms="16882">
+  <suite started-at="2025-04-11T20:25:46 IST" name="Suite" finished-at="2025-04-11T20:27:33 IST" duration-ms="106791">
     <groups>
     </groups>
-    <test started-at="2025-04-11T19:24:07 IST" name="Default test" finished-at="2025-04-11T19:24:24 IST" duration-ms="16882">
-      <class name="testCases.HomePageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.HomePageTest@2034b64c]" started-at="2025-04-11T19:24:07 IST" name="setup" finished-at="2025-04-11T19:24:11 IST" duration-ms="3569" status="PASS">
+    <test started-at="2025-04-11T20:25:46 IST" name="Test" finished-at="2025-04-11T20:27:33 IST" duration-ms="106791">
+      <class name="testCases.PatientTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.PatientTest@5b247367]" started-at="2025-04-11T20:26:41 IST" name="setup" finished-at="2025-04-11T20:26:47 IST" duration-ms="6015" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyCalculateWithDiscount()[pri:0, instance:testCases.HomePageTest@2034b64c]" started-at="2025-04-11T19:24:11 IST" name="verifyCalculateWithDiscount" finished-at="2025-04-11T19:24:24 IST" duration-ms="13145" status="PASS">
+        <test-method signature="verifyAddPatientContactDetail()[pri:0, instance:testCases.PatientTest@5b247367]" started-at="2025-04-11T20:26:47 IST" name="verifyAddPatientContactDetail" finished-at="2025-04-11T20:26:50 IST" duration-ms="2901" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddPatientContactDetail -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testCases.PatientTest@5b247367]" started-at="2025-04-11T20:26:50 IST" name="closeBrowser" finished-at="2025-04-11T20:26:50 IST" duration-ms="112" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyAddPatientContactDetail status=SUCCESS method=PatientTest.verifyAddPatientContactDetail()[pri:0, instance:testCases.PatientTest@5b247367] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.PatientTest@5b247367]" started-at="2025-04-11T20:26:50 IST" name="setup" finished-at="2025-04-11T20:26:56 IST" duration-ms="5895" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyAddSecondaryDetail()[pri:0, instance:testCases.PatientTest@5b247367]" started-at="2025-04-11T20:26:56 IST" name="verifyAddSecondaryDetail" finished-at="2025-04-11T20:27:00 IST" duration-ms="3565" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddSecondaryDetail -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testCases.PatientTest@5b247367]" started-at="2025-04-11T20:27:00 IST" name="closeBrowser" finished-at="2025-04-11T20:27:00 IST" duration-ms="134" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyAddSecondaryDetail status=SUCCESS method=PatientTest.verifyAddSecondaryDetail()[pri:0, instance:testCases.PatientTest@5b247367] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.PatientTest@5b247367]" started-at="2025-04-11T20:27:00 IST" name="setup" finished-at="2025-04-11T20:27:06 IST" duration-ms="5781" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyPatientrecordCreationforTest()[pri:0, instance:testCases.PatientTest@5b247367]" started-at="2025-04-11T20:27:06 IST" name="verifyPatientrecordCreationforTest" finished-at="2025-04-11T20:27:33 IST" duration-ms="26919" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //label[text()='Doctor who recommended this test']/following::button[1] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.85, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\darek\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59027}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59027/devtoo..., se:cdpVersion: 135.0.7049.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4f6af69945fa0f9718a13aaf863c1c23]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //label[text()='Doctor who recommended this test']/following::button[1] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.85, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\darek\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59027}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59027/devtoo..., se:cdpVersion: 135.0.7049.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4f6af69945fa0f9718a13aaf863c1c23
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+at pages.Patient.testRecommendedBy(Patient.java:228)
+at pages.Patient.addTestDetails(Patient.java:147)
+at testCases.PatientTest.verifyPatientrecordCreationforTest(PatientTest.java:66)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPatientrecordCreationforTest -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testCases.PatientTest@5b247367]" started-at="2025-04-11T20:27:33 IST" name="closeBrowser" finished-at="2025-04-11T20:27:33 IST" duration-ms="339" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPatientrecordCreationforTest status=FAILURE method=PatientTest.verifyPatientrecordCreationforTest()[pri:0, instance:testCases.PatientTest@5b247367] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testCases.PatientTest -->
+      <class name="testCases.LoginTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.LoginTest@53045c6c]" started-at="2025-04-11T20:25:46 IST" name="setup" finished-at="2025-04-11T20:25:50 IST" duration-ms="3477" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="loginWithInvalidCredentials()[pri:0, instance:testCases.LoginTest@53045c6c]" started-at="2025-04-11T20:25:50 IST" name="loginWithInvalidCredentials" finished-at="2025-04-11T20:25:51 IST" duration-ms="1515" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Login working as expected]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loginWithInvalidCredentials -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testCases.LoginTest@53045c6c]" started-at="2025-04-11T20:25:51 IST" name="closeBrowser" finished-at="2025-04-11T20:25:51 IST" duration-ms="112" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginWithInvalidCredentials status=SUCCESS method=LoginTest.loginWithInvalidCredentials()[pri:0, instance:testCases.LoginTest@53045c6c] output=Login working as expected]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.LoginTest@53045c6c]" started-at="2025-04-11T20:25:51 IST" name="setup" finished-at="2025-04-11T20:25:53 IST" duration-ms="1362" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="logintoapplication()[pri:0, instance:testCases.LoginTest@53045c6c]" started-at="2025-04-11T20:25:53 IST" name="logintoapplication" finished-at="2025-04-11T20:25:57 IST" duration-ms="4136" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Login successful--https://gor-pathology.web.app/dashboard]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- logintoapplication -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testCases.LoginTest@53045c6c]" started-at="2025-04-11T20:25:57 IST" name="closeBrowser" finished-at="2025-04-11T20:25:57 IST" duration-ms="136" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=logintoapplication status=SUCCESS method=LoginTest.logintoapplication()[pri:0, instance:testCases.LoginTest@53045c6c] output=Login successful--https://gor-pathology.web.app/dashboard]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testCases.LoginTest -->
+      <class name="testCases.HomePageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.HomePageTest@1750fbeb]" started-at="2025-04-11T20:25:57 IST" name="setup" finished-at="2025-04-11T20:26:00 IST" duration-ms="2935" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="costCalcSectionOnHomePage()[pri:0, instance:testCases.HomePageTest@1750fbeb]" started-at="2025-04-11T20:26:00 IST" name="costCalcSectionOnHomePage" finished-at="2025-04-11T20:26:04 IST" duration-ms="4370" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- costCalcSectionOnHomePage -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testCases.HomePageTest@1750fbeb]" started-at="2025-04-11T20:26:04 IST" name="closeBrowser" finished-at="2025-04-11T20:26:04 IST" duration-ms="139" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=costCalcSectionOnHomePage status=SUCCESS method=HomePageTest.costCalcSectionOnHomePage()[pri:0, instance:testCases.HomePageTest@1750fbeb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.HomePageTest@1750fbeb]" started-at="2025-04-11T20:26:04 IST" name="setup" finished-at="2025-04-11T20:26:07 IST" duration-ms="2967" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="todoListSectionOnHomePage()[pri:0, instance:testCases.HomePageTest@1750fbeb]" started-at="2025-04-11T20:26:07 IST" name="todoListSectionOnHomePage" finished-at="2025-04-11T20:26:12 IST" duration-ms="4325" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- todoListSectionOnHomePage -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testCases.HomePageTest@1750fbeb]" started-at="2025-04-11T20:26:12 IST" name="closeBrowser" finished-at="2025-04-11T20:26:12 IST" duration-ms="143" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=todoListSectionOnHomePage status=SUCCESS method=HomePageTest.todoListSectionOnHomePage()[pri:0, instance:testCases.HomePageTest@1750fbeb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.HomePageTest@1750fbeb]" started-at="2025-04-11T20:26:12 IST" name="setup" finished-at="2025-04-11T20:26:15 IST" duration-ms="3281" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyCalculateWithDiscount()[pri:0, instance:testCases.HomePageTest@1750fbeb]" started-at="2025-04-11T20:26:15 IST" name="verifyCalculateWithDiscount" finished-at="2025-04-11T20:26:28 IST" duration-ms="13171" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Subtotal calulated correctly]]>
@@ -27,11 +231,33 @@
             </line>
           </reporter-output>
         </test-method> <!-- verifyCalculateWithDiscount -->
-        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testCases.HomePageTest@2034b64c]" started-at="2025-04-11T19:24:24 IST" name="closeBrowser" finished-at="2025-04-11T19:24:24 IST" duration-ms="121" status="PASS">
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testCases.HomePageTest@1750fbeb]" started-at="2025-04-11T20:26:28 IST" name="closeBrowser" finished-at="2025-04-11T20:26:28 IST" duration-ms="136" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyCalculateWithDiscount status=SUCCESS method=HomePageTest.verifyCalculateWithDiscount()[pri:0, instance:testCases.HomePageTest@2034b64c] output=Subtotal calulated correctly]]]>
+                <![CDATA[[TestResult name=verifyCalculateWithDiscount status=SUCCESS method=HomePageTest.verifyCalculateWithDiscount()[pri:0, instance:testCases.HomePageTest@1750fbeb] output=Subtotal calulated correctly]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.HomePageTest@1750fbeb]" started-at="2025-04-11T20:26:28 IST" name="setup" finished-at="2025-04-11T20:26:31 IST" duration-ms="2935" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyCalculatorWithoutDiscount()[pri:0, instance:testCases.HomePageTest@1750fbeb]" started-at="2025-04-11T20:26:31 IST" name="verifyCalculatorWithoutDiscount" finished-at="2025-04-11T20:26:41 IST" duration-ms="9794" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Cost calculator functions properly without discount applied]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyCalculatorWithoutDiscount -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testCases.HomePageTest@1750fbeb]" started-at="2025-04-11T20:26:41 IST" name="closeBrowser" finished-at="2025-04-11T20:26:41 IST" duration-ms="114" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCalculatorWithoutDiscount status=SUCCESS method=HomePageTest.verifyCalculatorWithoutDiscount()[pri:0, instance:testCases.HomePageTest@1750fbeb] output=Cost calculator functions properly without discount applied]]]>
               </value>
             </param>
           </params>
@@ -39,6 +265,6 @@
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- testCases.HomePageTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

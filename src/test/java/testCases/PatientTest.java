@@ -31,22 +31,25 @@ public class PatientTest extends TestBase {
 		addPatient = new Patient();
 
 	}
-
-	public void verifyAddPatientContactDetail()
+    @Test
+	public void verifyAddPatientContactDetail() throws InterruptedException
 	{
 		addPatient.clickAddPatientBtn();
 		addPatient.addPatientContactDetails();
-		Assert.assertTrue(addPatient.getPageTitle().contains("Secondary details"));
+		addPatient.clickGeneralDetailsBtn();
+
+		Assert.assertTrue(addPatient.getPageTitle("Secondary details"));
 	}
 	
-	public void verifyAddSecondaryDetail()
+    @Test
+	public void verifyAddSecondaryDetail() throws InterruptedException
 	{
 		addPatient.clickAddPatientBtn();
 		addPatient.addPatientContactDetails();
 		addPatient.clickGeneralDetailsBtn();
 		addPatient.addSecondaryDetails();
 		addPatient.clickAddTestsBtn();
-		Assert.assertTrue(addPatient.getPageTitle().contains("Test Cost Calculator"));
+		Assert.assertTrue(addPatient.getPageTitle("Test Cost Calculator"));
 	}
 	
 	@Test

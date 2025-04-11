@@ -110,8 +110,9 @@ public class Patient extends TestBase {
 
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-	public String getPageTitle() {
-		return pagesubTitle.getText();
+	public boolean getPageTitle(String string) throws InterruptedException {
+		Thread.sleep(2000);
+		return driver.findElement(By.xpath("//*[contains(text(),'"+string+"')]")).isDisplayed();
 	}
 	public void addPatientContactDetails() {
 		nameField.sendKeys("Pushpa");

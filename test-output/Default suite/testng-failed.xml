@@ -5,9 +5,9 @@
     <classes>
       <class name="testCases.PatientTest">
         <methods>
+          <include name="verifyPatientrecordCreationforTest"/>
           <include name="closeBrowser"/>
           <include name="setup"/>
-          <include name="test"/>
         </methods>
       </class> <!-- testCases.PatientTest -->
     </classes>
