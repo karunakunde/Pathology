@@ -5,6 +5,7 @@
     <classes>
       <class name="testCases.PatientTest">
         <methods>
+          <include name="closeBrowser"/>
           <include name="setup"/>
           <include name="test"/>
         </methods>

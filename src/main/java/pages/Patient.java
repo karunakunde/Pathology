@@ -1,21 +1,24 @@
 package pages;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.devtools.v113.page.Page;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import net.bytebuddy.asm.MemberSubstitution.FieldValue;
 import testbase.TestBase;
 
 public class Patient extends TestBase {
-
+	@FindBy(xpath = "//h5")
+	private WebElement pagesubTitle;
+	
 	@FindBy(xpath = "//div[text()='Patients']/following-sibling::a")
 	WebElement addPatientBtn;
 
@@ -45,13 +48,13 @@ public class Patient extends TestBase {
 
 	@FindBy(xpath = "//ul[@role='listbox']/li")
 	WebElement gendeList;
-	
+
 	@FindBy(xpath = "//li[@data-value='female']")
 	WebElement femaleGender;
-	
+
 	@FindBy(xpath = "//li[@data-value='female']")
 	WebElement maleGender;
-	
+
 	@FindBy(xpath = "//li[@data-value='']")
 	WebElement noneGender;
 
@@ -75,24 +78,49 @@ public class Patient extends TestBase {
 
 	@FindBy(xpath = "//ul[@role='listbox']/li")
 	List<WebElement> discountList;
-	
+
 	@FindBy(xpath = "//input[@id='patient-tests-labs']")
 	WebElement labsInputfield;
-	
+
 	@FindBy(xpath = "//ul[@id='patient-tests-labs-popup']/li[1]")
 	WebElement firstLabName;
+
+	@FindBy(xpath = "//input[@name='doctor_name']")
+	WebElement doctorNameField;
+
+	@FindBy(xpath = "//ul[@id='mui-37988-popup']/li")
+	List<WebElement> doctorNameList;
 	
+	@FindBy(xpath = "//ul[@id='mui-37988-popup']/li[1]")
+	WebElement firstDocName;
+	
+	@FindBy(xpath = "//div[@id='mui-component-select-doctor_commission']")
+	WebElement doctorCommField;
+
+	@FindBy(xpath = "//li[@role='option']")
+	List<WebElement> doctorCommisionList;
+	
+	@FindBy(xpath = "//button[@title='Add equipment']")
+	WebElement addEquipmentBtn;
+	
+	@FindBy(xpath = "//div[@aria-label='Eqipment Name']")
+	WebElement equipmentDropdown;
+	
+	
+
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-	public void addPatientContactDetails()
-	{
+	public String getPageTitle() {
+		return pagesubTitle.getText();
+	}
+	public void addPatientContactDetails() {
 		nameField.sendKeys("Pushpa");
 		emailField.sendKeys("pushpa@gmail.com");
 		phoneField.sendKeys("9696969696");
-				
+
 	}
-	public void addSecondaryDetails()
-	{
+
+	public void addSecondaryDetails() {
 		heightField.sendKeys("167");
 		weightField.sendKeys("50");
 		genderDropdown.click();
@@ -100,20 +128,35 @@ public class Patient extends TestBase {
 		ageField.sendKeys("35");
 		systolicBP.sendKeys("120");
 		diastolicBP.sendKeys("80");
-		
-				
+
 	}
-	
-	public void clickGeneralDetailsBtn()
-	{
+
+	public void addTestDetails(String[] patientTests, int[] testPrices, double discountPer)
+			throws InterruptedException {
+
+		List<String> list = Arrays.asList(patientTests);
+
+		addPatientTest(list);
+		clickOnDiscountDropdown();
+		selectDiscount((int) discountPer + "%");
+		selectLabFromDropdown("HEALTHCARE PATHOLOGY (Sion) - AFP (ALPHA FETO PROTEINS) - 180₹");
+	    
+		clickOnDoctorCommission();
+		selectCommission((int) discountPer + "%");
+		testRecommendedBy("Beans");
+		addEquipment();
+
+	}
+
+	public void clickGeneralDetailsBtn() {
 		generalDetailBtn.click();
 	}
-	public void clickAddTestsBtn()
-	{
-		
-		addTestsBtn.click();
+
+	public void clickAddTestsBtn() {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", addTestsBtn);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", addTestsBtn); // JS click
 	}
-	
+
 	public Patient() {
 
 		PageFactory.initElements(driver, this);
@@ -125,9 +168,10 @@ public class Patient extends TestBase {
 
 	public void addPatientTest(List<String> list) throws InterruptedException {
 
+		Thread.sleep(2000);
 		for (String test : list) {
 			addPatientTestField.sendKeys(test);
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			selectTestFromDropdown(test);
 
 		}
@@ -169,11 +213,70 @@ public class Patient extends TestBase {
 
 		}
 	}
-	
+
 	public void selectLabFromDropdown(String labName) throws InterruptedException {
-		
-        labsInputfield.sendKeys(labName);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//ul[@id='patient-tests-labs-popup']/li[1]")));
-        firstLabName.click();
+
+		labsInputfield.sendKeys(labName);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//ul[@id='patient-tests-labs-popup']/li[1]")));
+		firstLabName.click();
 	}
+
+	public void testRecommendedBy(String doctorName) throws InterruptedException {
+		Thread.sleep(3000);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement w = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Doctor who recommended this test']/following::button[1]")));
+		w.click();
+		
+		for (WebElement docName : doctorNameList) {
+
+			String discountText = docName.getText();
+
+			if (doctorName.equalsIgnoreCase(discountText)) {
+				docName.click();
+				break;
+
+			}
+
+		}
+
+	}
+
+	public void clickOnDoctorCommission() throws InterruptedException {
+		Thread.sleep(3000);
+		doctorCommField.click();
+	}
+
+	public void selectCommission(String doctorcomm) {
+
+		for (WebElement commission : doctorCommisionList) {
+
+			String commissionText = commission.getText();
+
+			if (doctorcomm.equalsIgnoreCase(commissionText)) {
+				commission.click();
+				break;
+
+			}
+
+		}
+	}
+	
+	public void addEquipment() throws InterruptedException
+	{
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", addEquipmentBtn);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", addEquipmentBtn); // JS click
+
+		WebElement equipmentDropdown =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-label='Eqipment Name']/parent::div")));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", equipmentDropdown);
+        Thread.sleep(4000);
+        equipmentDropdown.sendKeys(Keys.ENTER);
+	    wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement option = wait.until(ExpectedConditions.visibilityOfElementLocated(
+		    By.xpath("//li[@role='option' and text()='Glove']") // exact match
+		));
+		
+		option.click();
+	}
+
+	
 }
